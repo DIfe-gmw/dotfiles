@@ -19,16 +19,16 @@ floating_modifier $mod
 
 ## Set variables
 
-set $ws1 "1  "
-set $ws2 "2 "
-set $ws3 "3 "
-set $ws4 "4 "
-set $ws5 "5 "
-set $ws6 "6 "
-set $ws7 "7 "
-set $ws8 "8 "
-set $ws9 "9 "
-set $ws10 "10 "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -148,23 +148,31 @@ bindsym $mod+shift+x exec i3lock --color "$bg-color"
 
 ## Window colors
 #                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color           $indicator
-client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color  $indicator
-client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $indicator
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color           $indicator
+# Window color settings
+# class                 border  backgr. text    indicator
+client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+client.unfocused        #2e3440 #2e3440 #888888 #2e3440
+client.focused_inactive #2e3440 #2e3440 #888888 #2e3440
+client.placeholder      #2e3440 #2e3440 #888888 #2e3440
+client.urgent           #900000 #900000 #ffffff #900000
+client.background       #242424
 
-bar { 
-	status_command i3status
-	colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-		
-	}
-}
+
+#bar { 
+#	status_command i3status
+#	colors {
+#		background $bg-color
+#	    	separator #757575
+#		#                  border             background         text
+#		focused_workspace  $bg-color          $bg-color          $text-color
+#
+#		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+#		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#
+#	}
+#}
+
+hide_edge_borders both
 
 ## Additional execs and fixes
 
@@ -175,8 +183,6 @@ assign [class="Chromium"] $ws2
 assign [class="Microsoft Teams - Preview"] $ws3
 assign [class="discord"] $ws4
 assign [class="Steam"] $ws5
-exec --no-startup-id alacritty
-exec --no-startup-id alacritty
 exec --no-startup-id alacritty
 exec --no-startup-id alacritty
 exec --no-startup-id chromium
@@ -194,7 +200,10 @@ exec_always xrandr --output DP-1 --mode 1920x1080 --pos 1920x0 --rotate normal -
 exec setxkbmap -layout br -model abnt2 -variant abnt2
 
 # Set transparent windows
-exec picom -f -i 0.8
+exec picom -f -i 1
+
+# calendar
+bindsym $mod+c exec zenity --calendar
 
 # Start Audio
 exec pulseaudio --start
@@ -202,4 +211,15 @@ exec pulseaudio --start
 # Start Autotiling
 exec_always --no-startup-id autotiling
 
+# no borders 
+for_window [class="^.*"] border pixel 2
+
+# gaps 
+gaps inner 5
+gaps outer 5 
+smart_gaps on
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
 binding_mode_indicator no
+
