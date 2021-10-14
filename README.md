@@ -8,15 +8,15 @@
 
 Code and files for the purpose of editing the default i3 design, using tools like **Polybar**, **Picom**, **Feh** and **Font Awesome**. Links for their github repositories below in order respectively,  more details about this project is also below.
 
-This project was made in:
-**OS:** Artix Linux OpenRC x86_64
-**Kernel:** 5.14.11-xanmod1-1
-**WM:** i3-gaps
-**Terminal:** Alacritty
+This project was made in:<br>
+**OS:** Artix Linux OpenRC x86_64<br>
+**Kernel:** 5.14.11-xanmod1-1<br>
+**WM:** i3-gaps<br>
+**Terminal:** Alacritty<br>
 
-Themes used:
-**Theme:** Arc-Dark [GTK2/3]
-**Icons:** Moka [GTK2/3]
+Themes used:<br>
+**Theme:** Arc-Dark [GTK2/3]<br>
+**Icons:** Moka [GTK2/3]<br>
 
 https://github.com/polybar/polybar
 
@@ -111,7 +111,7 @@ $ sudo cp -r ./i3 ~/.config/
 ```
 $ sudo cp -r ./Pictures ~/
 ```
-**Pictures**
+**.bashrc**
 ```
 $ sudo cp -r ./.bashrc ~/
 ```
