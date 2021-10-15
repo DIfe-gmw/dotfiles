@@ -52,13 +52,13 @@ $ git clone https://github.com/DIfe-gmw/dotfiles
 Then open your preferred terminal and follow to the next step
 
 ---
-Polybar and picom are necessary packages so do:
+These are necessary packages so do:
 
 ```
-$ sudo pacman -S polybar picom
+$ sudo pacman -S polybar picom rofi neofetch feh
 ```
 ---
-After that, we need to set up the  configuration, this is just a matter of placing files in the right place, it is possible to do this step in a file manager, or you can do it with style.
+After that, we need to set up the  configuration, this is just a matter of placing files in the right place and adjusting the monitor polybar config,
 
 ---
 ### File Manager
@@ -72,13 +72,13 @@ If you want to do it with a file manager just put these files in the following d
 
 **polybar** > ~/.config
 
-**i3** > ~/.config
+**i3** > ~/.config/config
 
 **Pictures folder** > ~/
 
 **.bashrc** > ~/
-After you've done it just fully reload I3 with $mod+Shift+e and exit, relog into your user and it should work.
-But if you prefer to do it with style we are not finished yet, follow me 
+
+After you've done it just fully reload I3 with $mod+Shift+e and exit, and follow to the next step
 
 ---
 
@@ -105,7 +105,7 @@ $ sudo cp -r ./polybar ~/.config/
 ```
 **I3**
 ```
-$ sudo cp -r ./i3 ~/.config/
+$ sudo cp -r ./i3/config ~/.config/
 ```
 **Pictures**
 ```
@@ -117,9 +117,23 @@ $ sudo cp -r ./.bashrc ~/
 ```
 ---
 
+Now to the final step!
 
+Open ~/.config/polybar/config with your preferred text editor and delete from bar/example-hdmi1 to bar/example-dp1
 
+<img src="https://i.imgur.com/ShikZzj.png" width=800>
 
+Don't forget to delete the bar/example-hdmi1 module too!
+After that configure your monitor by inserting the id, if you don't know your monitor's id refer to [xrandr](https://wiki.archlinux.org/title/Xrandr)
+
+<img src="https://i.imgur.com/VKuv5zf.png" width=500>
+
+After that go to **~/.config/polybar/launch.sh**
+Remove all HDMI-1 instances and change "grep 'DP-1'" to "grep 'your-monitor-id'"
+
+<img src="https://i.imgur.com/YiE743z.png" width=500>
+
+And you're done! Enjoy your new design.
 
 
 
