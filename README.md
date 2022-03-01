@@ -30,8 +30,7 @@ https://github.com/FortAwesome/Font-Awesome
 
 ### License & Copyright
 
-I'm not entitled to any copyright in this project as this was largely made with community and open-source templates and tools, or FOSS.
-Basically use this as you wish, just respect the licenses of the tools used.
+Unlicense
 
 ### Contributors
 
