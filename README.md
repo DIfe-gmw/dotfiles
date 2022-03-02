@@ -32,6 +32,7 @@ https://github.com/FortAwesome/Font-Awesome
 
 Unlicense
 
+The licenses of the software/fonts used here still apply!
 ### Contributors
 
 - [DIfe-gmw](https://github.com/DIfe-gmw)
@@ -42,7 +43,7 @@ Unlicense
 
 So, let's begin.
 
----
+
 First of all, clone this repository using git clone:
 
 ```
@@ -50,17 +51,16 @@ $ git clone https://github.com/DIfe-gmw/dotfiles
 ```
 Then open your preferred terminal and follow to the next step
 
----
 These are necessary packages so do:
 
 ```
 $ sudo pacman -S polybar picom rofi neofetch feh
 ```
----
+
 After that, we need to set up the  configuration, this is just a matter of placing files in the right place and adjusting the monitor polybar config,
 
 ---
-### File Manager
+## File Manager
 If you want to do it with a file manager just put these files in the following directories:
 
 **picom.conf** > /etc/xdg/picom.conf
@@ -81,9 +81,10 @@ After you've done it just fully reload I3 with $mod+Shift+e and exit, and follow
 
 ---
 
-### Command Line 
+## Command Line 
 
 If you decided to do it with style, good! we will use the 'cp' command for copying the files to their right directories and cd to change directories.
+#### Note: This will overwrite the current configuration. it is advised to do a backup in case it fails.
 
 **Change into the cloned git repository**
 ```
